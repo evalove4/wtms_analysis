@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import openpyxl
 
 # Page configuration
 st.set_page_config(page_title='Sensor Signals Visualization', layout='wide')
