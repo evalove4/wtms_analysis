@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Page configuration
 st.set_page_config(page_title='Sensor Signals Visualization', layout='wide')
-st.title('Sensor Signals Visualization')
+st.title('수질TMS 측정상수 시각화APP')
 
 # File uploader
 uploaded_file = st.file_uploader('Upload Excel file', type=['xlsx'])
