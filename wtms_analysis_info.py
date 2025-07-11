@@ -17,10 +17,10 @@ if uploaded_file:
     # Replace "-" values with 0 in numeric columns
     numeric_columns = ['기준치', '측정치', 'MSIG', 'MTM1', 'MTM2', 'MSAM', 'MFC']
     for col in numeric_columns:
-    if col in df.columns:
-        df[col] = df[col].replace('-', 0)
-        # Convert to numeric, handling any remaining non-numeric values
-        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+        if col in df.columns:
+            df[col] = df[col].replace('-', 0)
+            # Convert to numeric, handling any remaining non-numeric values
+            df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
     
     # Rename key columns to English
     df.rename(columns={
