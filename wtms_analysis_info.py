@@ -7,8 +7,10 @@ import openpyxl
 st.set_page_config(page_title='Sensor Signals Visualization', layout='wide')
 st.title('수질TMS 측정상수 시각화APP')
 
+st.subheader("수질TMS 5분 측정상수 데이터를 업로드해주세요!", divider="Green")
+
 # File uploader
-uploaded_file = st.file_uploader('수질TMS 5분 측정상수 데이터를 업로드해주세요!', type=['xlsx'])
+uploaded_file = st.file_uploader('.xlsx 데이터를 업로드해주세요!', type=['xlsx'])
 
 if uploaded_file:
     # Read Excel, use second row (index 1) as header
