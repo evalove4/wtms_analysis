@@ -13,6 +13,14 @@ uploaded_file = st.file_uploader('수질TMS 5분 측정상수 데이터를 업�
 if uploaded_file:
     # Read Excel, use second row (index 1) as header
     df = pd.read_excel(uploaded_file, header=1)
+
+    # Replace "-" values with 0 in numeric columns
+    numeric_columns = ['기준치', '측정치', 'MSIG', 'MTM1', 'MTM2', 'MSAM', 'MFC']
+    for col in numeric_columns:
+    if col in df.columns:
+        df[col] = df[col].replace('-', 0)
+        # Convert to numeric, handling any remaining non-numeric values
+        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
     
     # Rename key columns to English
     df.rename(columns={
